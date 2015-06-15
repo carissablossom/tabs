@@ -1,3 +1,10 @@
+html {
+  height: 100%;
+  background-color: #3C3B6E;
+  margin: 0;
+  padding: 0;
+}
+
 .main {
   width: 80%;
   margin: 0 auto;
@@ -5,29 +12,38 @@
   padding: 5px;
 }
 
-.tabs {
-  height: 2em;
-}
-
-.tab-texts {
-  min-height: 2em;
-}
-
 body {
-  background-color: black;
+  background-color: #3C3B6E;
+  background: url('http://www.hdwallpapersnew.net/wp-content/uploads/2015/01/american-flag-beautiful-images-hd-new-wallpapers-of-us-flag.jpg') center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  font-family: 'Slabo 27px', serif;
+  margin: 0;
 }
 
 .tab-header {
   display: inline-block;
   background-color: blue;
   color: white;
-  margin: 5px ;
+  padding: 5px;
+}
+
+.tab-header.active {
+  background-color: white;
+  color: blue;
 }
 
 .tab-body {
   display: none;
+  background-color: white;
+  padding: 5px 10px;
 }
 
 .tab-body.active {
   display: block;
+}
+
+h1, h3 {
+  text-align: center;
+  color: white;
 }

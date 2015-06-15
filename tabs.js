@@ -67,8 +67,10 @@
   Tab.View.prototype.setActive = function(isActive) {
     if (isActive) {
       this.bodyView.classList.add('active');
+      this.headerView.classList.add('active');
     } else {
       this.bodyView.classList.remove('active');
+      this.headerView.classList.remove('active');
     }
   }
 
