@@ -16,13 +16,14 @@
       var tab = tabs[i];
       var tabContainer = this;
       tab.view.appendTo(headerContainer, bodyContainer);
-      function respondToClick(i) {
-        return function() {
-          tabContainer.setActive(i);
-        }
-      }
-      tab.view.headerView.addEventListener('click', respondToClick(i));
+      tab.view.headerView.addEventListener('click', this.updateToIndex(i));
     }
+  }
+
+  TabContainer.prototype.updateToIndex = function(index) {
+    return function() {
+      this.setActive(index);
+    }.bind(this);
   }
 
   TabContainer.prototype.setActive = function(index) {
@@ -65,13 +66,8 @@
   }
 
   Tab.View.prototype.setActive = function(isActive) {
-    if (isActive) {
-      this.bodyView.classList.add('active');
-      this.headerView.classList.add('active');
-    } else {
-      this.bodyView.classList.remove('active');
-      this.headerView.classList.remove('active');
-    }
+    this.bodyView.classList.toggle('active', isActive);
+    this.headerView.classList.toggle('active', isActive);
   }
 
   var headerContainer = document.getElementsByClassName('tabs')[0];
@@ -83,5 +79,5 @@
   }
 
   var container = new TabContainer(tabs, headerContainer, bodyContainer);
-  container.setActive();
+  container.setActive(1);
 })();
