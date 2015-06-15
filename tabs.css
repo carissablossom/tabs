@@ -1,0 +1,33 @@
+.main {
+  width: 80%;
+  margin: 0 auto;
+  background-color: grey;
+  padding: 5px;
+}
+
+.tabs {
+  height: 2em;
+}
+
+.tab-texts {
+  min-height: 2em;
+}
+
+body {
+  background-color: black;
+}
+
+.tab-header {
+  display: inline-block;
+  background-color: blue;
+  color: white;
+  margin: 5px ;
+}
+
+.tab-body {
+  display: none;
+}
+
+.tab-body.active {
+  display: block;
+}
